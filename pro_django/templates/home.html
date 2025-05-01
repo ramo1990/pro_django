@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} home{% endblock title %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+<h1>Home page</h1>
+
+{% if list %}
+<center>
+    {% for i in list %}
+        <li>{{forloop.counter}} - {{ i }}</li>
+    {% empty %} <!--Ne passera pas car le if block tout-->
+        <li>Liste vide</li>
+    {% endfor %}
+</center>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+    <h2>You are log in {{ request.user.username }}</h2>
+{% else %}
+    <h2> You are not log in</h2>
+{% endif %}
+
+{% include 'section_home.html' %}
+
+{% endblock content %}
