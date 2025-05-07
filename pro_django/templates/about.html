@@ -3,4 +3,14 @@
 
 {% block content %}
 <h1>About page</h1>
+<h3>{{ title|capfirst|upper|cut:'U' }}</h3>
+
+{% for nombre in list_number %}
+<li>{{ nombre|add:100 }}</li>
+{% endfor %}
+
+<h3> {{ html|safe }}</h3>
+<h2>{{ html1|striptags }}</h2>
+<h2>{% now "jS F Y H:i" %}</h2>
+
 {% endblock content %}

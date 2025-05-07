@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} create product {% endblock %}
+
+{% block content %}
+    <h1>welcome to the create product page</h1>
+    <h1 style="color: green;">{{ message }}</h1>
+
+    <!--<form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Create Product">
+    </form>-->
+
+    <form method="post" action=".">
+        {% csrf_token %}
+        <!--<input type="text" name="nom" placeholder="Nom du produit"><br><br>
+        <textarea name="description" placeholder="description du produit" cols="70" rows="20"></textarea><br><br>
+        <input type="int" name="prix" placeholder="Prix du produit"><br><br> -->
+
+        {{ form.as_p }}
+
+        <input type="submit" value="envoyer">
+    </form>
+{% endblock %}

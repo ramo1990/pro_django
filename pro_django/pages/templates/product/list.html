@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Liste des produits</h1>
+    <ul>
+        {% for produit in object_list %}
+        <li>{{ produit.nom }} - {{ produit.prix }} € </li>
+        <p> {{ produit.description }}</p>
+        <a href="{{ produit.get_absolute_url_for_detail }}">voir produit</a>
+        <a href="{{ produit.get_absolute_url_for_delete }}">supprimer</a> <br>
+        {% endfor %}
+    </ul>
+{% endblock %}
